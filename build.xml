@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="java-15">
+
+  <target name="jar" depends="compile" description="Create femton.jar">
+    <jar destfile="femton.jar" basedir="." includes="**/*.class">
+      <manifest>
+	<!-- Who is building this jar? -->
+	<attribute name="Built-By" value="${user.name}"/>
+	<!-- Information about the program itself -->
+	<attribute name="Implementation-Vendor" value="Rasmus Kaj"/>
+	<attribute name="Implementation-Title" value="15"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="compile">
+    <javac srcdir="." destdir="." debug="on" target="1.5" source="1.5"
+           encoding="utf-8" includeantruntime="false">
+      <compilerarg value="-Xlint"/>
+    </javac>
+  </target>
+  
+</project>
